@@ -7,9 +7,27 @@
     //Calcule se o usuário possui dinheiro suficiente para realizar a viagem para o destino que pretende. Se o usuário puder viajar, o programa apresentará a mensagem "Boa viagem" e quantos dias poderá ficar no destino, além de qual será o custo da viagem. Caso não possa viajar o programa apresentará a mensagem "Sem Férias" e também apresentará "quantos dinheiros" (R$) estão faltando para realizar a viagem.
 
     //ENTRADA
+    const lugar = prompt("para onde desejar realizar a viagem? (Rio Grande do Sul-RS ou Minas Gerais-MG)").trim().toLocaleUpperCase
+    const dias = prompt("quantos dias ficara m viagem?").trim().toLocaleUpperCase
+    const dinheiro = Number(prompt("quanto dinheiro voce tem para realizar a viagem?").trim().replace(",","."))
 
 
     //PROCESSAMENTO
+    if(isNaN(dinheiro)){
+        alert("resultado invalido")
+    }
+    else if(lugar == "rs"){
+        const valor = dias * 180
+        if(valor > dinheiro){
+            alert("voce não tem dinheiro para viajar")
+        }
+        else if(dinheiro > valor){
+            alert("boa viajem")
+        }
+    }
+    else if(lugar == "mg"){
+        const valor1 = dias * 210
+    }
 
 
     //SAÍDA

@@ -9,11 +9,44 @@
     //Calcule o custo total dos alimentos e verifique se há dinheiro suficiente para realizar a compra, indicando se sobrará ou faltará dinheiro, e também apresentando qual foi a quantia que sobrou ou faltou para realizar a compra. Apresente também na tela o valor total da compra.
 
     //ENTRADA
-
+    const mamao = Number(prompt("informe o preço da unidade mamao").trim().replace(",","."))
+    const melancia = Number(prompt("informe o preço do kilo da melancia").trim().replace(",","."))
+    const abacate = Number(prompt("informe o preço da unidade do abacate").trim().replace(",","."))
+    const cebola = Number(prompt("informe o preço do kilo da cebola").trim().replace(",","."))
+    const dinheiro = Number(prompt("informe quanto dinheiro voce possui para realizar a compra").trim().replace(",","."))
 
     //PROCESSAMENTO
+    const valorMamao = 5 * mamao
+    const valorMelancia = 3 * melancia
+    const valorAbacate = 4 * abacate
+    const valorCebola = 1.1 * cebola
+
+    const valorTotal = valorMamao + valorMelancia + valorAbacate + valorCebola
+
+    const falta = valorTotal - dinheiro
+    const sobra = dinheiro - valorTotal
 
 
     //SAÍDA
+    if(isNaN(mamao) || isNaN(melancia) || isNaN(abacate) || isNaN(cebola) || isNaN(dinheiro)){
+        alert("resultado invalido")
+    }
+    
+    else if(valorTotal > dinheiro){
+        alert(`voce nao tem dinheiro o suficiente para a compra faltam R$ ${falta.toFixed(2)}`)
+    }
+    
+    else if(valorTotal == dinheiro){
+        alert(`o valor da compra deu exatamente R$ ${dinheiro}`)
+    }
+
+    else if(dinheiro > valorTotal){
+        alert(`da compra feita sobrara R$${sobra.toFixed(2)}`)
+    }
+
+    else{
+        alert("resultado invalido")
+    }
+
 
 </script>
